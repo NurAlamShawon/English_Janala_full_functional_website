@@ -364,6 +364,7 @@ const check = () => {
       title: "Please Enter your Username",
       text: "Something went wrong!",
     });
+    return;
   }
 
   if (password_value === 123456) {
