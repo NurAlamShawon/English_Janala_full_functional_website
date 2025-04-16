@@ -16,6 +16,10 @@
     <!-- sweet alert  cdn-->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
     <!-- style -->
     <style>
@@ -23,75 +27,45 @@
         background-color: #422ad5;
         color: white;
       }
+      .poppins-light {
+        font-family: "Poppins", sans-serif;
+        font-weight: 300;
+        font-style: normal;
+      }
     </style>
   </head>
-  <body>
-    <header class="mb-48">
-      <!-- nav bar -->
-      <nav class="w-full sticky top-0 hidden" id="navbar">
-        <div class="navbar bg-base-100 shadow-sm">
-          <div class="navbar-start">
-            <div class="dropdown">
-              <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M4 6h16M4 12h8m-8 6h16"
-                  />
-                </svg>
-              </div>
-              <ul
-                tabindex="0"
-                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+  <body class="poppins-light">
+    <!-- nav bar -->
+    <nav
+      class="w-full sticky top-0 z-50 bg-base-100 shadow-sm hidden"
+      id="navbar"
+    >
+      <div class="navbar bg-base-100 shadow-sm">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
               >
-                <li>
-                  <a href="#faq" class="scroll-smooth focus:scroll-auto"
-                    ><button class="btn btn-outline btn-primary xl:mr-6 mr-1">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="currentColor"
-                        class="size-6"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z"
-                        />
-                      </svg>
-                      FAQ
-                    </button>
-                  </a>
-                  <a href="#learn"
-                    ><button class="btn btn-outline btn-primary xl:mr-6 mr-1">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="currentColor"
-                        class="size-6"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
-                        />
-                      </svg>
-                      Learn
-                    </button>
-                  </a>
-                  <button class="btn btn-outline btn-primary xl:mr-6 mr-1 mb-1">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </div>
+            <ul
+              tabindex="0"
+              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+            >
+              <li>
+                <a href="#faq" class="scroll-smooth focus:scroll-auto"
+                  ><button class="btn btn-outline btn-primary xl:mr-6 mr-1">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -103,95 +77,131 @@
                       <path
                         stroke-linecap="round"
                         stroke-linejoin="round"
-                        d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15"
+                        d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z"
                       />
                     </svg>
-                    Logout
+                    FAQ
                   </button>
-                </li>
-              </ul>
-            </div>
-            <a class="btn btn-ghost text-xl font-semibold"
-              >English
-              <span>
-                <img
-                  src="./assets/logo.png"
-                  alt=""
-                  srcset=""
-                  class="max-w-10"
-                />
-              </span>
-              জানালা</a
-            >
+                </a>
+                <a href="#learn"
+                  ><button class="btn btn-outline btn-primary xl:mr-6 mr-1">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
+                      />
+                    </svg>
+                    Learn
+                  </button>
+                </a>
+                <button class="btn btn-outline btn-primary xl:mr-6 mr-1 mb-1">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15"
+                    />
+                  </svg>
+                  Logout
+                </button>
+              </li>
+            </ul>
           </div>
-
-          <div class="navbar-end hidden xl:inline-flex xl:justify-end">
-            <a href="#faq"
-              ><button class="btn btn-outline btn-primary xl:mr-6 mr-1">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="size-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z"
-                  />
-                </svg>
-                FAQ
-              </button>
-            </a>
-
-            <a href="#learn"
-              ><button class="btn btn-outline btn-primary xl:mr-6 mr-1">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="size-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
-                  />
-                </svg>
-                Learn
-              </button>
-            </a>
-
-            <a href=""
-              ><button class="btn btn-outline btn-primary xl:mr-6 mr-1" onclick="homepage()">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="size-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15"
-                  />
-                </svg>
-                Logout
-              </button>
-            </a>
-          </div>
+          <a class="btn btn-ghost text-xl font-semibold font-bangla"
+            >English
+            <span>
+              <img src="./assets/logo.png" alt="" srcset="" class="max-w-10" />
+            </span>
+            জানালা</a
+          >
         </div>
-      </nav>
 
+        <div class="navbar-end hidden xl:inline-flex xl:justify-end">
+          <a href="#faq"
+            ><button class="btn btn-outline btn-primary xl:mr-6 mr-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z"
+                />
+              </svg>
+              FAQ
+            </button>
+          </a>
+
+          <a href="#learn"
+            ><button class="btn btn-outline btn-primary xl:mr-6 mr-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
+                />
+              </svg>
+              Learn
+            </button>
+          </a>
+
+          <a href=""
+            ><button
+              class="btn btn-outline btn-primary xl:mr-6 mr-1"
+              onclick="homepage()"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15"
+                />
+              </svg>
+              Logout
+            </button>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <header class="mb-10">
       <!-- hero section -->
 
-      <section class="max-w-screen-2xl mx-auto xl:mt-5 mt-2" id="hero_section">
+      <section class="max-w-screen-2xl mx-auto xl:mt-10 mt-2" id="hero_section">
         <div
           class="xl:flex xl:flex-row-reverse justify-center items-center xl:ml-0 ml-2"
         >
@@ -208,7 +218,7 @@
             <h1 class="text-5xl font-bold">
               <span class="text-[#00BCFF]">English</span> is Easy!!
             </h1>
-            <p class="text-2xl font-medium">
+            <p class="text-2xl font-medium font-bangla">
               আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা
               আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে
               যাবে অন্য একটি Level এ
@@ -226,21 +236,22 @@
               class="input input-sm"
               id="password"
             /><br />
-            <button class="btn btn-primary" onclick="check()">Get Started</button>
+            <button class="btn btn-primary" onclick="check()">
+              Get Started
+            </button>
           </div>
         </div>
       </section>
     </header>
 
     <main class="max-w-screen-2xl mx-auto">
-
-      <section id="learn" class="pt-10 hidden">
+      <section id="learn" class="pt-20 hidden">
         <h1 class="text-center text-5xl font-bold mb-9">
           <span class="text-[#00BCFF]">Let's</span> Learn Vocabularies
         </h1>
         <!-- buttons -->
 
-        <div class="flex max-w-lg xl:max-w-5xl mb-5 mx-auto" id="buttons"></div>
+        <div class="flex flex-wrap max-w-lg xl:max-w-5xl mb-5 mx-auto " id="buttons"></div>
 
         <!-- card part -->
 
@@ -249,10 +260,10 @@
           id="card"
         >
           <div class="col-span-3">
-            <p class="text-base text-[#79716B] pt-12">
+            <p class="text-base text-[#79716B] pt-12 font-bangla">
               আপনি এখনো কোন Lesson Select করেন নাই
             </p>
-            <h1 class="text-center text-[#292524] text-2xl pb-12">
+            <h1 class="text-center text-[#292524] text-2xl pb-12 font-bangla">
               একটি Lesson Select করুন।
             </h1>
           </div>
@@ -261,7 +272,7 @@
 
       <!-- FAQ part -->
 
-      <section id="faq" class="mb-52 mt-30 pt-10 hidden">
+      <section id="faq" class="mb-52 mt-8 pt-20 hidden">
         <h1 class="text-center text-5xl font-bold mb-16">
           <span class="text-[#00BCFF]">Frequently</span> Asked Questions
         </h1>
@@ -383,18 +394,16 @@
 
       <section>
         <!-- Open the modal using ID.showModal() method -->
-     
-        <dialog id="my_modal" class="modal">
-         
-        </dialog>
+
+        <dialog id="my_modal" class="modal"></dialog>
       </section>
     </main>
 
-    <footer class="pt-5 pb-30 border-t-2 border-[#FFEBEB]">
+    <footer class="xl:pl-0 pl-1 xl:pt-10 pt-2 pb-30 border-t-2 border-[#FFEBEB]">
       <section class="max-w-screen-2xl mx-auto">
-        <div class="flex items-center justify-between">
+        <div class="flex xl:flex-row flex-col  xl:items-center xl:justify-between">
           <div>
-            <span class="p-0 btn btn-ghost text-xl font-semibold"
+            <span class="p-0 btn btn-ghost text-xl font-semibold font-bangla"
               >English
               <span>
                 <img
@@ -412,9 +421,9 @@
             </p>
           </div>
 
-          <div>
+          <div class="xl:mt-0 mt-4">
             <p class="font-semibold text-lg">Follow us</p>
-            <div class="flex gap-1 justify-center items-center">
+            <div class="flex gap-1 xl:justify-center xl:items-center">
               <div><img src="./assets/fb-thumb.png" alt="" srcset="" /></div>
               <div>
                 <img src="./assets/github-thumb.png" alt="" srcset="" />
@@ -434,5 +443,3 @@
     <script src="./index.js"></script>
   </body>
 </html>
-
-
