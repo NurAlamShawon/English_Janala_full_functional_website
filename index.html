@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>English Janala</title>
+
+    <!-- cdn for tailwind and daisy ui -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- sweet alert  cdn-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+    <!-- style -->
+    <style>
+      .active {
+        background-color: #422ad5;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="mb-48">
+      <!-- nav bar -->
+      <nav class="w-full sticky top-0 hidden" id="navbar">
+        <div class="navbar bg-base-100 shadow-sm">
+          <div class="navbar-start">
+            <div class="dropdown">
+              <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
+              </div>
+              <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+              >
+                <li>
+                  <a href="#faq" class="scroll-smooth focus:scroll-auto"
+                    ><button class="btn btn-outline btn-primary xl:mr-6 mr-1">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="size-6"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z"
+                        />
+                      </svg>
+                      FAQ
+                    </button>
+                  </a>
+                  <a href="#learn"
+                    ><button class="btn btn-outline btn-primary xl:mr-6 mr-1">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="size-6"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
+                        />
+                      </svg>
+                      Learn
+                    </button>
+                  </a>
+                  <button class="btn btn-outline btn-primary xl:mr-6 mr-1 mb-1">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15"
+                      />
+                    </svg>
+                    Logout
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <a class="btn btn-ghost text-xl font-semibold"
+              >English
+              <span>
+                <img
+                  src="./assets/logo.png"
+                  alt=""
+                  srcset=""
+                  class="max-w-10"
+                />
+              </span>
+              জানালা</a
+            >
+          </div>
+
+          <div class="navbar-end hidden xl:inline-flex xl:justify-end">
+            <a href="#faq"
+              ><button class="btn btn-outline btn-primary xl:mr-6 mr-1">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z"
+                  />
+                </svg>
+                FAQ
+              </button>
+            </a>
+
+            <a href="#learn"
+              ><button class="btn btn-outline btn-primary xl:mr-6 mr-1">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
+                  />
+                </svg>
+                Learn
+              </button>
+            </a>
+
+            <a href=""
+              ><button class="btn btn-outline btn-primary xl:mr-6 mr-1" onclick="homepage()">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15"
+                  />
+                </svg>
+                Logout
+              </button>
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- hero section -->
+
+      <section class="max-w-screen-2xl mx-auto xl:mt-5 mt-2" id="hero_section">
+        <div
+          class="xl:flex xl:flex-row-reverse justify-center items-center xl:ml-0 ml-2"
+        >
+          <div>
+            <img
+              src="./assets/hero-student.png"
+              alt=""
+              srcset=""
+              class="xl:max-w-2xl"
+            />
+          </div>
+
+          <div class="space-y-3">
+            <h1 class="text-5xl font-bold">
+              <span class="text-[#00BCFF]">English</span> is Easy!!
+            </h1>
+            <p class="text-2xl font-medium">
+              আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা
+              আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে
+              যাবে অন্য একটি Level এ
+            </p>
+
+            <input
+              type="text"
+              placeholder="Enter Your Name"
+              class="input input-sm"
+              id="username"
+            /><br />
+            <input
+              type="text"
+              placeholder="Enter the Password `123456`"
+              class="input input-sm"
+              id="password"
+            /><br />
+            <button class="btn btn-primary" onclick="check()">Get Started</button>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <main class="max-w-screen-2xl mx-auto">
+
+      <section id="learn" class="pt-10 hidden">
+        <h1 class="text-center text-5xl font-bold mb-9">
+          <span class="text-[#00BCFF]">Let's</span> Learn Vocabularies
+        </h1>
+        <!-- buttons -->
+
+        <div class="flex max-w-lg xl:max-w-5xl mb-5 mx-auto" id="buttons"></div>
+
+        <!-- card part -->
+
+        <div
+          class="grid xl:grid-cols-3 grid-cols-1 gap-4 p-2 text-center bg-[#F8F8F8] rounded-lg mb-10 border border-2 border-blue-100"
+          id="card"
+        >
+          <div class="col-span-3">
+            <p class="text-base text-[#79716B] pt-12">
+              আপনি এখনো কোন Lesson Select করেন নাই
+            </p>
+            <h1 class="text-center text-[#292524] text-2xl pb-12">
+              একটি Lesson Select করুন।
+            </h1>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ part -->
+
+      <section id="faq" class="mb-52 mt-30 pt-10 hidden">
+        <h1 class="text-center text-5xl font-bold mb-16">
+          <span class="text-[#00BCFF]">Frequently</span> Asked Questions
+        </h1>
+
+        <div class="collapse collapse-plus bg-base-100 border border-base-300">
+          <input type="radio" name="my-accordion-3" checked="checked" />
+          <div class="collapse-title font-semibold">
+            1.The difference between var, let, and const?
+          </div>
+          <div class="collapse-content text-sm">
+            In JavaScript, var, let, and const are used to declare variables,
+            but they behave differently. The var keyword is the oldest way to
+            declare a variable. It is function-scoped, which means the variable
+            is accessible anywhere inside the function where it is declared.
+            Variables declared with var can also be re-declared and updated.
+            However, it can cause unexpected results in modern code, so it's
+            less recommended now. The let keyword was introduced in ES6. It is
+            block-scoped, meaning it only works within the curly braces {} where
+            it is declared, like inside an if statement or a loop. Variables
+            declared with let can be updated, but cannot be re-declared in the
+            same scope. It is a better and safer choice than var for most
+            situations. The const keyword is also block-scoped like let, but it
+            is used to declare constants. Once a variable is declared with
+            const, its value cannot be changed or updated. It is useful when you
+            want to make sure a variable never changes.
+          </div>
+        </div>
+        <div class="collapse collapse-plus bg-base-100 border border-base-300">
+          <input type="radio" name="my-accordion-3" />
+          <div class="collapse-title font-semibold">
+            2.The difference between map(), forEach(), and filter()?
+          </div>
+          <div class="collapse-content text-sm">
+            In JavaScript, map(), forEach(), and filter() are all methods used
+            to work with arrays, but they serve different purposes. The
+            forEach() method is used when you want to go through each item in an
+            array and perform an action, such as printing the values or updating
+            something outside the array. It does not return a new array, and
+            it’s mostly used when you don’t need to save the result, just do
+            something with the items. The map() method is used when you want to
+            create a new array by applying some changes to each item in the
+            original array. It takes each element, processes it, and returns a
+            new array with the transformed values. This is helpful when you want
+            to modify data while keeping the original array unchanged. On the
+            other hand, the filter() method is used when you want to remove or
+            keep certain elements based on a condition. It goes through each
+            item in the array and returns a new array with only the items that
+            match the condition you give it.
+          </div>
+        </div>
+        <div class="collapse collapse-plus bg-base-100 border border-base-300">
+          <input type="radio" name="my-accordion-3" />
+          <div class="collapse-title font-semibold">
+            3.Explain arrow functions and how they are different from regular
+            functions?
+          </div>
+          <div class="collapse-content text-sm">
+            In JavaScript, arrow functions are a shorter way to write functions.
+            They were introduced in ES6 and are commonly used because they make
+            the code cleaner and easier to read. The main difference is in the
+            syntax. A regular function is written using the function keyword,
+            while an arrow function uses the => symbol. Besides the syntax,
+            arrow functions behave differently in terms of how they handle the
+            this keyword. In regular functions, the value of this depends on how
+            the function is called. But in arrow functions, this is inherited
+            from the surrounding scope, meaning it doesn't change. Because of
+            this behavior, arrow functions are very useful in situations like
+            event listeners or callbacks where we want to keep the same this
+            context. However, arrow functions cannot be used as constructors,
+            and they don’t have their own arguments object like regular
+            functions do.
+          </div>
+        </div>
+
+        <div class="collapse collapse-plus bg-base-100 border border-base-300">
+          <input type="radio" name="my-accordion-3" />
+          <div class="collapse-title font-semibold">
+            4.How JavaScript Promises work?
+          </div>
+          <div class="collapse-content text-sm">
+            In JavaScript, a Promise is a way to handle tasks that take some
+            time to complete, like loading data from a server or waiting for a
+            response from an API. These tasks are called asynchronous
+            operations. A Promise does not give the result immediately. Instead,
+            it acts like a container that will eventually give us either a
+            successful result or an error. Every Promise has three states.
+            First, it starts as pending, which means the task is still running.
+            If the task completes successfully, the Promise becomes fulfilled,
+            and we get the result. But if the task fails, the Promise becomes
+            rejected, and we get an error message. We can create a Promise using
+            the new Promise() syntax, and inside it, we define what should
+            happen when the task succeeds or fails using two functions: resolve
+            for success and reject for failure. To handle the result of a
+            Promise, we use .then() to run code when the Promise is successful,
+            and .catch() to handle errors if something goes wrong.
+          </div>
+        </div>
+        <div class="collapse collapse-plus bg-base-100 border border-base-300">
+          <input type="radio" name="my-accordion-3" />
+          <div class="collapse-title font-semibold">
+            5.How closures work in JavaScript?
+          </div>
+          <div class="collapse-content text-sm">
+            In JavaScript, a closure is created when a function is defined
+            inside another function and the inner function has access to the
+            outer function’s variables, even after the outer function has
+            finished running. This means that the inner function "remembers" the
+            environment in which it was created. It can still access the outer
+            function’s variables because of how JavaScript manages scope and
+            memory. For example, if we declare a variable inside a function, and
+            then return another function from it, that inner function keeps a
+            reference to the outer variable, not just a copy of its value. This
+            allows us to preserve data in memory without using global variables,
+            which is useful for things like private variables or function
+            factories.
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <!-- Open the modal using ID.showModal() method -->
+     
+        <dialog id="my_modal" class="modal">
+         
+        </dialog>
+      </section>
+    </main>
+
+    <footer class="pt-5 pb-30 border-t-2 border-[#FFEBEB]">
+      <section class="max-w-screen-2xl mx-auto">
+        <div class="flex items-center justify-between">
+          <div>
+            <span class="p-0 btn btn-ghost text-xl font-semibold"
+              >English
+              <span>
+                <img
+                  src="./assets/logo.png"
+                  alt=""
+                  srcset=""
+                  class="max-w-10"
+                />
+              </span>
+              জানালা</span
+            >
+            <h1 class="font-medium text-xl mb=2">ইংরেজি শিখুন সহজে</h1>
+            <p class="font-regular text-base">
+              Providing ED-Tech Applications since 2025
+            </p>
+          </div>
+
+          <div>
+            <p class="font-semibold text-lg">Follow us</p>
+            <div class="flex gap-1 justify-center items-center">
+              <div><img src="./assets/fb-thumb.png" alt="" srcset="" /></div>
+              <div>
+                <img src="./assets/github-thumb.png" alt="" srcset="" />
+              </div>
+              <div>
+                <img src="./assets/instagram-thumb.png" alt="" srcset="" />
+              </div>
+              <div>
+                <img src="./assets//youtube-thumb.png" alt="" srcset="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
+
+
